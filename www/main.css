@@ -1,7 +1,21 @@
 body {
   overflow: hidden;
   margin : 0;
+  font-family: "Karla", Arial;
 }
+
+a {
+  color: black;
+}
+
+a:hover {
+  color:#888888;
+}
+
+ul {
+  list-style-type:none;
+}
+
 #circles {
   /* border: 1px solid black; */
   /* width: 695px;
@@ -12,8 +26,24 @@ body {
   position:absolute;
 }
 
+#main {
+  margin-left: 10px;
+}
+
 #sidebar {
-  display:inline-block;
-  width:200px;
-  float:left;
+  display          : inline-block;
+  width            : 200px;
+  float            : left;
+  background-color : rgba(100, 100, 100, 0.5);
+}
+
+#footer {
+  position: fixed;
+  bottom: 10px;
+  right:10px;
+}
+
+.title {
+/*  font-weight:900; */
+  font-size:40pt;
 }
