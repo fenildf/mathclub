@@ -1,0 +1,18 @@
+body {
+  overflow: hidden;
+}
+#circles {
+  /* border: 1px solid black; */
+  /* width: 695px;
+  height: 478px; */
+  display: inline-block;
+  overflow:hidden;
+  z-index:-1;
+  position:absolute;
+}
+
+#sidebar {
+  display:inline-block;
+  width:200px;
+  float:left;
+}
