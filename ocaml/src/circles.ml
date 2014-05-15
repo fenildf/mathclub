@@ -21,18 +21,16 @@ let circles = Array.map ~f:(fun ctr -> ctr, circle_radius ctr) centers
  * (m, y0) where the tangent line is given by
  * the equation y = m x + y0 *)
 let tangent_coefficents ((x1, y1), r1) ((x2, y2), r2) =
-  let dx, dy = x2 -. x1, y2 -. y1 in
-  let dr     = r2 -. r1 in
-  let d      = sqrt (dx ** 2. +. dy ** 2.) in
-  let nx     = dx /. d in
-  let ny     = dy /. d in
-  let nr     = dr /. d in
-  let a k = (nr *. nx) -. (k *. ny *. sqrt (1. -. (nr ** 2.))) in
-  let b k = (nr *. ny) +. (k *. nx *. sqrt (1. -. (nr ** 2.))) in
+  let dx, dy, dr = x2 -. x1, y2 -. y1, r2 -. r1 in
+  let d          = sqrt (dx ** 2. +. dy ** 2.) in
+  let nx, ny, nr = dx /. d, dy /. d, dr /. d in
+  let a k        = (nr *. nx) -. (k *. ny *. sqrt (1. -. (nr ** 2.))) in
+  let b k        = (nr *. ny) +. (k *. nx *. sqrt (1. -. (nr ** 2.))) in
   Arrow.both
-    (fun k -> let a' = a k in let b' = b k in 
-           let c' = r1 -. (a' *. x1 +. b' *. y1)
-            in (-. a' /. b', -. c' /. b'))
+    (fun k ->
+      let a' = a k in let b' = b k in 
+      let c' = r1 -. (a' *. x1 +. b' *. y1)
+      in (-. a' /. b', -. c' /. b'))
     (1., -1.)
 
 let draw_segs (slope, y0) =
@@ -56,19 +54,6 @@ let intersection_point (slope1, b1) (slope2, b2) =
   then (0., 0.)
   else let x = (b2 -. b1) /. (slope1 -. slope2) in (x, slope1 *. x +. b1)
 
-(*
-let tangent_lines (c1, r1b) (c2, r2b) = let open Frp.Behavior in
-  let segs_b =  zip_with r1b r2b ~f:(fun r1 r2 ->
-      Arrow.both draw_line (tangent_coefficents (c1, r1) (c2, r2))) 
-  in let open Draw in let c = Color.random () in
-  [| path ~anchor:(return (0., 0.)) (map ~f:fst segs_b)
-      ~props:[|return (Property.stroke c 2)|];
-     path ~anchor:(return (0., 0.)) (map ~f:snd segs_b)
-      ~props:[|return (Property.stroke c 2)|]|]
-*)
-let arr_tail a = let n = Array.length a in
-  Array.init (max (n - 1) 0) ~f:(fun i -> a.(i + 1))
-
 let draw_circle (ctr, r) = let open Draw in let open Frp.Behavior in
   circle r (return ctr)
     ~props:[|return (Property.fill Color.none); return (Property.stroke Color.black 2)|]
@@ -76,10 +61,9 @@ let draw_circle (ctr, r) = let open Draw in let open Frp.Behavior in
 let draw_lines data_b = let open Frp.Behavior in
   let segs_b = map ~f:(Arrow.both draw_segs) data_b in
   let open Draw in let c = Color.random () in
-    [| path ~anchor:(return (0., 0.)) (map ~f:fst segs_b)
-        ~props:[|return (Property.stroke c 2)|];
-      path ~anchor:(return (0., 0.)) (map ~f:snd segs_b)
-        ~props:[|return (Property.stroke c 2)|]|]
+  let line f = path ~anchor:(return (0., 0.)) (map ~f segs_b)
+    ~props:[|return (Property.stroke c 2)|]
+  in [| line fst; line snd |]
 
 let line_with_points (x1, y1) (x2, y2) =
   let m = (y2 -. y1) /. (x2 -. x1) in
@@ -91,10 +75,8 @@ let whole_shebang =
     ;  tangent_lines circles.(1) circles.(2)
     ;  tangent_lines circles.(2) circles.(0)
     |]
-  in
-  let open Frp.Behavior in
+  in let open Frp.Behavior in let open Draw in
   let intersection_pt i = map lines_data.(i) ~f:(fun (l1, l2) -> intersection_point l1 l2) in
-  let open Draw in
   let inter_line =
     path ~anchor:(return (0., 0.)) ~props:[|return (Property.stroke Color.black 2)|]
       (zip_with (intersection_pt 0) (intersection_pt 1) ~f:(fun p1 p2 -> 

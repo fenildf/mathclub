@@ -9,6 +9,7 @@ BuildTools:  ocamlbuild
 
 Executable circles
   Path: src
+  ByteOpt: -warn-error +a
   MainIs: circles.ml
   Install: false
   CompiledObject: byte

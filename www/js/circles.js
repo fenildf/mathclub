@@ -2684,14 +2684,14 @@ function caml_update_dummy (x, y) {
      circles_ra_=
       _jB_
        (centers_q9_,
-        /*<<53218: src/circles.ml 17 39 61>>*/function(ctr_q2_)
+        /*<<53189: src/circles.ml 19 39 61>>*/function(ctr_q2_)
          {var
            scale_qT_=1073741824,
            r1_qU_=_h9_(_h__),
            _qX_=(r1_qU_/scale_qT_+_h9_(_h__))/scale_qT_*80;
           function _q3_(_qY_)
            {return _mt_(_qY_,_qX_,function(param_qW_,x_qV_){return x_qV_;});}
-          /*<<53231: src/circles.ml 12 4 60>>*/function _q8_(pos_q0_)
+          /*<<53202: src/circles.ml 14 4 60>>*/function _q8_(pos_q0_)
            {var _q1_=_jj_(function(_qZ_){return _qZ_;},pos_q0_);
             return 8e3/
                    Math.sqrt
@@ -2713,7 +2713,7 @@ function caml_update_dummy (x, y) {
                                   y_q7_-o_q5_[_aN_.toString()]|0];}),
                       _q8_),
                     _q3_)];});
-    /*<<52999: src/circles.ml 38 14 4>>*/function draw_segs_rE_(param_rb_)
+    /*<<52970: src/circles.ml 40 14 4>>*/function draw_segs_rE_(param_rb_)
      {var y0_rc_=param_rb_[2],far_x_rd_=3e3;
       return [0,
               [1,[0,0,y0_rc_]],
@@ -2738,7 +2738,7 @@ function caml_update_dummy (x, y) {
                   ny_rq_=_rk_/d_ro_,
                   nr_rr_=(r2_rm_-r1_rn_)/d_ro_;
                  return _jj_
-                         (/*<<53036: src/circles.ml 33 14 41>>*/function(k_rs_)
+                         (/*<<53007: src/circles.ml 35 14 41>>*/function(k_rs_)
                            {var
                              _rt_=
                               nr_rr_*
@@ -2756,7 +2756,7 @@ function caml_update_dummy (x, y) {
                                     -_rt_/_ru_,
                                     -(r1_rn_-(_rt_*x1_rj_+_ru_*y1_ri_))/_ru_];},
                           _p_);});}
-    /*<<52825: src/circles.ml 72 16 88>>*/function draw_circle_rS_(param_rx_)
+    /*<<52825: src/circles.ml 61 16 88>>*/function draw_circle_rS_(param_rx_)
      {var
        r_ry_=param_rx_[2],
        _rz_=return_mp_(param_rx_[1]),
@@ -2765,7 +2765,7 @@ function caml_update_dummy (x, y) {
        _rD_=0,
        props_rC_=[0,_rB_]?_rB_:[0];
       return [0,[0,_rD_],props_rC_,r_ry_,_rz_];}
-    /*<<52695: src/circles.ml 77 2 49>>*/function draw_lines_rT_(data_b_rF_)
+    /*<<52695: src/circles.ml 66 2 49>>*/function draw_lines_rT_(data_b_rF_)
      {var
        segs_b_rG_=map_mq_(data_b_rF_,_cP_(_jj_,draw_segs_rE_)),
        _rH_=_ie_(256),
@@ -2792,8 +2792,8 @@ function caml_update_dummy (x, y) {
         (caml_array_get(circles_ra_,0),caml_array_get(circles_ra_,1)),
        _rV_,
        _rU_];
-    /*<<52640: src/circles.ml 96 26 90>>*/function intersection_pt_sb_(i_r6_)
-     {/*<<52631: src/circles.ml 96 53 89>>*/function _r7_(param_rX_)
+    /*<<52640: src/circles.ml 85 26 90>>*/function intersection_pt_sb_(i_r6_)
+     {/*<<52631: src/circles.ml 85 53 89>>*/function _r7_(param_rX_)
        {var
          l2_rY_=param_rX_[2],
          l1_rZ_=param_rX_[1],
