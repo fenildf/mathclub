@@ -12,6 +12,10 @@ a:hover {
   color:#888888;
 }
 
+#sidebar a:hover {
+  color:rgb(215,215,215);
+}
+
 #content ul {
   padding-left: 300px;
 }

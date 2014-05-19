@@ -17,4 +17,4 @@ Executable main
 
 PostBuildCommand:
   js_of_ocaml -debuginfo -pretty main.byte
-  mv main.js ../www/js
+  goocc --js main.js --js_output_file ../www/js/main.js
