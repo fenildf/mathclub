@@ -9,10 +9,10 @@ let width, height = 3000, 1000 (* 695, 478 *)
 let distance p1 p2 = Vector.(norm (sub p1 p2))
 let circle_radius center =
   Frp.Stream.map (Jq.relative_mouse_pos main_container) ~f:(fun pos ->
-    8000. /. (distance (Arrow.both float_of_int pos) center))
+    8000. /. distance (Arrow.both float_of_int pos) center)
   |> Frp.latest ~init:(Random.float 80.)
 
-let centers = [|(400., 170.); (350., 360.); (600., 450.)|]
+let centers = [|(600., 370.); (550., 560.); (800., 650.)|]
 
 let circles = Array.map ~f:(fun ctr -> ctr, circle_radius ctr) centers
 
@@ -89,7 +89,7 @@ let whole_shebang =
       ; [| inter_line |]
       ])
 
-let () = begin
+let main () = begin
   let (svg, sub) = Draw.render_svg_node ~width ~height whole_shebang in
   Jq.Dom.append (Option.value_exn (Jq.to_dom_node main_container)) svg
 end

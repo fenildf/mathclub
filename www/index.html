@@ -1,20 +1,69 @@
 <html>
   <head>
     <script src="js/lib/jquery.min.js"></script>
-    <script src='js/lib/jquery-ui.min.js'></script>
-    <script src='js/circles.js' defer='defer'></script>
+    <script src='js/main.js' defer='defer'></script>
     <link rel='stylesheet' href='main.css'>
-    <link rel='stylesheet' type='text/css' href="http://fonts.googleapis.com/css?family=Karla:400,700">
+    <link rel='stylesheet' type='text/css' href="http://fonts.googleapis.com/css?family=Karla:400,400italic,700">
   </head>
   <body>
     <div id='circles'></div>
     <div id='main'>
       <h1 class='title'>Math Club</h1>
-      <div id='content'>
-        <ul id='sidebar'>
-          <li>About</li>
-          <li>Officiers</li>
-        </ul>
+      <div id='content-row'>
+        <div id='sidebar-wrapper'>
+          <ul id='sidebar'>
+            <li><a href='#'>ABOUT</a></li>
+            <li><a href='#'>OFFICERS</a></li>
+          </ul>
+        </div>
+        <div id='content'>
+          <div id='about'>
+            <h2>ABOUT</h2>
+            <p>
+              Like playing pretend? Or arguing? Or arguing about the correct way to play pretend?
+              In either case, math (or math club) can offer you that and
+            </p>
+            <ul>
+              <li>Profound aesthetic beauty (see officers section)</li>
+              <li>Profound aesthetic mathematical beauty</li>
+              <li>Lectures from brilliant mathematicians</li>
+              <li>Food</li>
+            </ul>
+            <p>
+              We hold weekly meetings Tuesdays at 7:30 in the Barn (the big room
+              on the third floor of Ryerson) featuring the above and talks from
+              student members as well.
+            </p>
+          </div>
+          <div id='officers' style='display:none'>
+            <h2>OFFICERS</h2>
+
+            <div class='officer'>
+              <h3>Kay Li</h3>
+              <h4>President</h4>
+            </div>
+
+            <div class='officer'>
+              <h3>Mark Perlman</h3>
+              <h4>Treasurer</h4>
+            </div>
+
+            <div class='officer'>
+              <h3>Abigail Ward</h3>
+              <h4>Event Chair</h4>
+            </div>
+
+            <div class='officer'>
+              <h3>Geelon So</h3>
+              <h4>Secretary</h4>
+            </div>
+
+            <div class='officer'>
+              <h3>Izaak Meckler</h3>
+              <h4>Outreach Chair</h4>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div id='footer'>

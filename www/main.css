@@ -12,8 +12,12 @@ a:hover {
   color:#888888;
 }
 
-ul {
-  list-style-type:none;
+#content ul {
+  padding-left: 300px;
+}
+
+#content {
+  max-width:900px;
 }
 
 #circles {
@@ -27,14 +31,21 @@ ul {
 }
 
 #main {
-  margin-left: 10px;
+  padding-left: 25px;
+  padding-top: 10px;
 }
 
 #sidebar {
-  display          : inline-block;
+  list-style-type  : none;
   width            : 200px;
-  float            : left;
   background-color : rgba(100, 100, 100, 0.5);
+  font-size:15pt;
+}
+
+#sidebar-wrapper {
+  float:left;
+  height:500px;
+  margin-right:20px;
 }
 
 #footer {
@@ -47,3 +58,19 @@ ul {
 /*  font-weight:900; */
   font-size:40pt;
 }
+
+.officer h3 {
+  margin: 0;
+}
+
+
+.officer h4 {
+  margin: 0;
+  font-weight:400;
+  font-style:italic;
+}
+
+div .officer {
+  margin: 10px;
+}
+
