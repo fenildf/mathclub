@@ -2,6 +2,7 @@ body {
   overflow: hidden;
   margin : 0;
   font-family: "Karla", Arial;
+  background-color:rgb(44, 44, 44);
 }
 
 a {
@@ -12,8 +13,16 @@ a:hover {
   color:#888888;
 }
 
+#sidebar a {
+  color:white;
+}
+
 #sidebar a:hover {
   color:rgb(215,215,215);
+}
+
+#sidebar li {
+  padding-top:7px;
 }
 
 #content ul {
@@ -42,7 +51,7 @@ a:hover {
 #sidebar {
   list-style-type  : none;
   width            : 200px;
-  background-color : rgba(100, 100, 100, 0.5);
+  background-color : rgba(83, 83, 83, 1);
   font-size:15pt;
 }
 
@@ -76,5 +85,13 @@ a:hover {
 
 div .officer {
   margin: 10px;
+}
+
+.content-box {
+  background-color: rgba(216, 216, 216, 0.58);
+  margin-left: 250px;
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
