@@ -1,5 +1,4 @@
 body {
-  overflow: hidden;
   margin : 0;
   font-family: "Karla", Arial;
   background-color:rgb(44, 44, 44);
@@ -10,11 +9,12 @@ a {
 }
 
 a:hover {
-  color:#888888;
+  color:rgb(215,215,215);
 }
 
 #sidebar a {
-  color:white;
+  color:black;
+  font-weight:900;
 }
 
 #sidebar a:hover {
@@ -37,10 +37,19 @@ a:hover {
   /* border: 1px solid black; */
   /* width: 695px;
   height: 478px; */
-  display: inline-block;
+  /* display: inline-block; */
+  /*
+  height:100%;
+  width:100%;
   overflow:hidden;
   z-index:-1;
-  position:absolute;
+  position:absolute; */
+  position:fixed;
+  top:0;
+  left:0;
+  min-width:100%;
+  min-height:100%;
+  z-index:-1;
 }
 
 #main {
@@ -51,8 +60,8 @@ a:hover {
 #sidebar {
   list-style-type  : none;
   width            : 200px;
-  background-color : rgba(83, 83, 83, 1);
-  font-size:15pt;
+  background-color : rgba(216, 216, 216, 0.58);
+  font-size        : 15pt;
 }
 
 #sidebar-wrapper {
@@ -67,9 +76,14 @@ a:hover {
   right:10px;
 }
 
+#footer a {
+  color: white;
+}
+
 .title {
 /*  font-weight:900; */
   font-size:40pt;
+  color:white
 }
 
 .officer h3 {

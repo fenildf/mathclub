@@ -15,7 +15,7 @@ let () =
         Array.iter sidebar ~f:(fun (div', _) ->
           Jq.css div' [|("display", "none")|]
         );
-        Jq.css div [|("display", "initial")|]
+        Jq.css div [|("display", "block")|]
       ) |> ignore
     );
     Circles.main ()
