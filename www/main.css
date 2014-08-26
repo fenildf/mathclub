@@ -1,7 +1,8 @@
 body {
+  overflow: hidden;
   margin : 0;
   font-family: "Karla", Arial;
-  background-color:rgb(44, 44, 44);
+  background-color:white;
 }
 
 a {
@@ -9,16 +10,7 @@ a {
 }
 
 a:hover {
-  color:rgb(215,215,215);
-}
-
-#sidebar a {
-  color:black;
-  font-weight:900;
-}
-
-#sidebar a:hover {
-  color:rgb(215,215,215);
+  color:#888888;
 }
 
 #sidebar li {
@@ -26,7 +18,7 @@ a:hover {
 }
 
 #content ul {
-  padding-left: 300px;
+  /* padding-left: 300px; */
 }
 
 #content {
@@ -37,19 +29,10 @@ a:hover {
   /* border: 1px solid black; */
   /* width: 695px;
   height: 478px; */
-  /* display: inline-block; */
-  /*
-  height:100%;
-  width:100%;
+  display: inline-block;
   overflow:hidden;
   z-index:-1;
-  position:absolute; */
-  position:fixed;
-  top:0;
-  left:0;
-  min-width:100%;
-  min-height:100%;
-  z-index:-1;
+  position:absolute;
 }
 
 #main {
@@ -76,14 +59,9 @@ a:hover {
   right:10px;
 }
 
-#footer a {
-  color: white;
-}
-
 .title {
 /*  font-weight:900; */
   font-size:40pt;
-  color:white
 }
 
 .officer h3 {
